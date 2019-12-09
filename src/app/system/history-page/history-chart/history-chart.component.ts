@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'wfm-history-chart',
@@ -7,7 +7,7 @@ import {Component, OnInit} from '@angular/core';
 })
 export class HistoryChartComponent implements OnInit {
 
-  data: [
+  data = [
     {
       "name": "Germany",
       "value": 8940000
@@ -15,12 +15,8 @@ export class HistoryChartComponent implements OnInit {
     {
       "name": "USA",
       "value": 5000000
-    },
-    {
-      "name": "France",
-      "value": 7200000
     }
-    ];
+  ];
 
   view = [545, 355];
 

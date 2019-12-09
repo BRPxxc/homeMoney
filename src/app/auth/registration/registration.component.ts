@@ -3,9 +3,6 @@ import {FormControl, FormGroup, Validators} from "@angular/forms";
 import {UsersService} from "../../shared/services/users.service";
 import {User} from "../../shared/models/users.model";
 import {Router} from "@angular/router";
-import {promise} from "selenium-webdriver";
-import {reject, resolve} from "q";
-import {el} from "@angular/platform-browser/testing/src/browser_util";
 
 @Component({
   selector: 'wfm-registration',
@@ -28,8 +25,9 @@ export class RegistrationComponent implements OnInit {
       'agree': new FormControl(false, [Validators.requiredTrue]),
     })
   }
+
   onSubmit() {
-    const {email, password, name} = this.form.value;
+    const { email, password, name } = this.form.value;
     const user = new User(email, password, name);
     this.usersService.createNewUser(user)
       .subscribe((user: User) => {
