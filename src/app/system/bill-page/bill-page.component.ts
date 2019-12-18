@@ -1,9 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { BillService } from "../shared/services/bill.service";
 import { forkJoin, Observable, observable, Subscription } from "rxjs";
-import { combineLatest } from "rxjs/operators";
+import { combineLatest, delay } from "rxjs/operators";
 import { Bill } from "../shared/models/bill.model";
-import { $ } from "protractor";
 
 @Component({
   selector: 'wfm-bill-page',
@@ -43,13 +42,10 @@ export class BillPageComponent implements OnInit {
     this.sub2 = this.billservice.getCurrency()
       .subscribe((currency: any) => {
         this.currency = currency;
-        this.isLoaded = true;
+        setTimeout(() => {
+          return this.isLoaded = true;
+        }, 500)
       })
 
-  }
-
-  onDestroy() {
-    this.sub1.unsubscribe();
-    this.sub2.unsubscribe();
   }
 }

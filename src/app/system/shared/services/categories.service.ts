@@ -3,6 +3,7 @@ import {HttpClient} from "@angular/common/http";
 import {Injectable} from "@angular/core";
 import {Category} from "../models/category.model";
 import {Observable} from "rxjs";
+import { id } from "@swimlane/ngx-charts/release/utils";
 
 @Injectable()
 export class CategoriesService extends BaseApi{
@@ -17,5 +18,8 @@ export class CategoriesService extends BaseApi{
   }
   updateCategory(category: Category): Observable<Category> {
     return this.put(`categories/${category.id}`, category)
+  }
+  getCategoryById(id: number): Observable<Category[]> {
+    return this.get(`categories/${id}`);
   }
 }

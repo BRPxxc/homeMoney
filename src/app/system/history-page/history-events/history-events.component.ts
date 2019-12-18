@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { Category } from "../../shared/models/category.model";
+import { WFMEvent } from "../../shared/models/event.model";
 
 @Component({
   selector: 'wfm-history-events',
@@ -7,9 +9,39 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HistoryEventsComponent implements OnInit {
 
-  constructor() { }
+  @Input() categories: Category[] = [];
+  @Input() events: WFMEvent[] = [];
+  searchValue = '';
+  searchPlaceholder = 'suma';
+  searchField = 'amount';
 
-  ngOnInit() {
+  constructor() {
   }
 
+  ngOnInit() {
+    this.events.forEach((e) => {
+      e.catName = this.categories.find(c => c.id === e.category).name
+    })
+  }
+
+  getEventClass(e: WFMEvent) {
+    return {
+      'label': true,
+      'label-danger': e.type === 'outcome',
+      'label-success': e.type === 'income'
+
+    }
+  }
+
+  changeCriteria(field: string) {
+    const namesMap = {
+      amount: 'Сумма',
+      date: 'Дата',
+      category: 'Категория',
+      type: 'Тип'
+    };
+    this.searchPlaceholder = namesMap[field];
+    this.searchField = field;
+
+  }
 }
