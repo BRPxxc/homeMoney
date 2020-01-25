@@ -3,6 +3,7 @@ import {FormControl, FormGroup, Validators} from "@angular/forms";
 import {UsersService} from "../../shared/services/users.service";
 import {User} from "../../shared/models/users.model";
 import {Router} from "@angular/router";
+import { Title } from "@angular/platform-browser";
 
 @Component({
   selector: 'wfm-registration',
@@ -14,8 +15,11 @@ export class RegistrationComponent implements OnInit {
   form: FormGroup;
   constructor(
     private usersService: UsersService,
-    private router: Router
-  ) { }
+    private router: Router,
+    private title: Title
+  ) {
+    title.setTitle('registration')
+  }
 
   ngOnInit() {
     this.form = new FormGroup({

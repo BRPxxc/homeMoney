@@ -28,4 +28,6 @@ export class BaseApi {
     return this.http.put(this.getUrl(url), data)
       .pipe(map((response: Response) => response))
   }
-}
+
+  }
+

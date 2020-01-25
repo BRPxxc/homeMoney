@@ -5,11 +5,14 @@ import { User } from "../../shared/models/users.model";
 import { Message } from "../../shared/models/message.model";
 import { AuthService } from "../../shared/services/auth.service";
 import { ActivatedRoute, Params, Router } from "@angular/router";
+import { fadeStateTrigger } from "../../shared/animation/fade.animation";
+import { Title } from "@angular/platform-browser";
 
 @Component({
   selector: 'wfm-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.scss']
+  styleUrls: ['./login.component.scss'],
+  animations: [fadeStateTrigger]
 })
 export class LoginComponent implements OnInit {
 
@@ -20,7 +23,9 @@ export class LoginComponent implements OnInit {
   constructor(private usersService: UsersService,
               private authService: AuthService,
               private router: Router,
-              private route: ActivatedRoute) {
+              private route: ActivatedRoute,
+              private title: Title) {
+    title.setTitle('login')
   }
 
   ngOnInit() {
