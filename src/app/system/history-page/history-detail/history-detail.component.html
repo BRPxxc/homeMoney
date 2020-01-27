@@ -3,7 +3,7 @@
   <div class="title-block">
     <h3 class="title">
       <a [routerLink]="['/system/history']"><i class="fa fa-arrow-left"></i></a>
-      Страница записи № {{event.id}}
+      Record page № {{event.id}}
       <span class="sparkline bar"></span>
     </h3>
   </div>
@@ -24,9 +24,9 @@
           </div>
           <div class="card-block">
             <ul>
-              <li>Сумма: <strong>{{event.amount | number: '1.2'}} Є</strong></li>
-              <li>Категория: <strong>{{category.name}}</strong></li>
-              <li>Коментарий: <strong>{{event.description}}</strong></li>
+              <li>Sum: <strong>{{event.amount | number: '1.2'}} Є</strong></li>
+              <li>Category: <strong>{{category.name}}</strong></li>
+              <li>Note: <strong>{{event.description}}</strong></li>
             </ul>
           </div>
           <div class="card-footer">{{event.date}}</div>

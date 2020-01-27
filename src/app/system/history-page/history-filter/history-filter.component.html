@@ -5,17 +5,17 @@
         <button type="button" class="close" (click)="closeFilter()">
           <span>×</span>
         </button>
-        <h4 class="modal-title">Фильтр</h4>
+        <h4 class="modal-title">Filtr</h4>
       </div>
       <div class="modal-body">
         <div class="form-group">
-          <label class="control-label" for="period">Выберите период</label>
+          <label class="control-label" for="period">choose period</label>
           <select class="form-control" id="period" [(ngModel)]="selectedPeriod">
             <option *ngFor="let p of timePeriods" [value]="p.type">{{p.label}}</option>
           </select>
         </div>
         <div class="form-group">
-          <label class="control-label">Выберите тип события</label>
+          <label class="control-label">choose type</label>
           <div>
             <label *ngFor="let t of types">
               <input
@@ -29,7 +29,7 @@
           </div>
         </div>
         <div class="form-group">
-          <label class="control-label">Выберите категории</label>
+          <label class="control-label">choose category</label>
           <div>
             <label *ngFor="let c of categories">
               <input
@@ -43,8 +43,8 @@
           </div>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" (click)="closeFilter()">Отмена</button>
-          <button type="button" class="btn btn-primary" (click)="filterApply()">Применить</button>
+          <button type="button" class="btn btn-secondary" (click)="closeFilter()">exit</button>
+          <button type="button" class="btn btn-primary" (click)="filterApply()">apply</button>
         </div>
       </div>
     </div>

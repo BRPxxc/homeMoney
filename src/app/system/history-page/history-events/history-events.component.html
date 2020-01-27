@@ -4,7 +4,7 @@
       <div class="card">
         <div class="card-header bordered">
           <div class="header-block">
-            <h3 class="title">Список событий</h3>
+            <h3 class="title">Records</h3>
           </div>
         </div>
         <div class="form-inline pull-right m-r-2">
@@ -17,7 +17,8 @@
           </div>
           <div class="btn-group" style="padding-top: 5px; padding-left: 2px" wfmDropdown>
             <button type="button" class="btn btn-secondary dropdown-toggle">
-              Параметр
+              parameter
+
             </button>
 
             <div class="dropdown-menu">
@@ -33,11 +34,11 @@
             <thead>
             <tr>
               <th>#</th>
-              <th>Сумма</th>
-              <th>Дата</th>
-              <th>Категория</th>
-              <th>Тип</th>
-              <th class="text-lg-center">Действие</th>
+              <th>Sum</th>
+              <th>Date</th>
+              <th>Category</th>
+              <th>type</th>
+              <th class="text-lg-center">action</th>
             </tr>
             </thead>
             <tbody>
@@ -53,7 +54,7 @@
                 </span>
               </td>
               <td class="text-lg-center">
-                <a [routerLink]="['/system/history', e.id]" class="btn btn-primary-outline">Открыть</a>
+                <a [routerLink]="['/system/history', e.id]" class="btn btn-primary-outline">Open</a>
               </td>
             </tr>
             </tbody>
